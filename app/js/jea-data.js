@@ -1,18 +1,19 @@
+//shop data object, write to file system later
 angular.module("jsonEditorApp")
-.factory('jeaForm', ['', function(){
-	var formFormat = [{
-		"name":"shopName",
-		"type":"text",
-		"model":"name",
-		"placeholder":"Please enter the name of the shop"
-	},
-	{
-		"name":"shopTel",
-		"type":"number",
-		"model":"tel",
-		"placeholder":"Please enter the contact number"
+.factory('jeaData', function(){
+	var displayData = [{
+		'name':'first shop',
+		'tel': 123456
 	}];
-	return function(){
-		return formFormat;
+	return {
+		get:function(){
+			return displayData;
+		},
+		add:function(data){
+			displayData.push(data);
+		},
+		edit:function(index, data){
+			
+		}
 	};
-}])
+})

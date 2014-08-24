@@ -1,1 +1,19 @@
 <h2>Add a new shop, fill the form</h2>
+<form id="shop-form" ng-submit="addShop()">
+	<table class="table">
+		<thead>
+			<th>No.</th>
+			<th>Name</th>
+			<th>Contact Number</th>
+		</tr>
+	</thead>
+		<tbody class="table-striped">
+			<tr >
+				<td>add 1</td>
+				<td ng-repeat="input in shopForm"><input class="form-control" type="{{input.type}}" name="{{input.name}}" ng-model="shop[input.model]" value="" placeholder="{{input.placeholder}}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<input type="submit" class="btn btn-primary" name="" value="Save">
+</form>

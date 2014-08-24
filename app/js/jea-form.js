@@ -1,5 +1,6 @@
+//form structure, todo: define in an external file
 angular.module("jsonEditorApp")
-.factory('jeaForm', ['', function(){
+.factory('jeaForm',function(){
 	var formFormat = [{
 		"name":"shopName",
 		"type":"text",
@@ -12,7 +13,7 @@ angular.module("jsonEditorApp")
 		"model":"tel",
 		"placeholder":"Please enter the contact number"
 	}];
-	return function(){
-		return formFormat;
-	};
-}])
+
+	return formFormat;
+
+})
