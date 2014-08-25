@@ -1,6 +1,6 @@
 <div class="action">
 	<a href="#/new" class="btn btn-danger">Add New</a>
-	<a class="btn btn-danger" ng-click="output()">Output to JSON File</a>
+	<a class="btn btn-danger" href="#/output">Output to JSON File</a>
 </div>
 <table class="table">
 	<thead>
@@ -13,8 +13,7 @@
 	<tbody class="table-striped">
 		<tr ng-repeat="shop in shopData track by $index">
 			<td>{{$index}}</td>
-			<td>{{shop.name}}</td>
-			<td>{{shop.tel}}</td>
+			<td ng-repeat="input in shopForm">{{shop[input.model]}}</td>
 			<td><a href="#/edit/{{$index}}" class="btn btn-warning">Edit</a></td>
 		</tr>
 	</tbody>

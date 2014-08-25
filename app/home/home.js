@@ -5,24 +5,10 @@ angular.module("jsonEditorApp")
     controller : 'homeController'
   });
 }])
-.controller('homeController', ['$scope', '$http','jeaData', function($scope, $http, jeaData){
+.controller('homeController', ['$scope', '$http','jeaData', 'jeaForm', 'jsonStorage', function($scope, $http, jeaData, jeaForm, jsonStorage){
 	
 	//shop data object, write to file system later
 	$scope.shopData = jeaData.get();
-
-	$scope.output = function(){
-		// $http.put(API_URL + '/urls/' + entry.id, form).success(ready);
-		
-
-		$http.get('http://localhost:8888/api/output')
-		.success(function(data) {
-			
-			console.log(data);
-		})
-		.error(function(data) {
-			console.log('Error: ' + data);
-		});
-
-	};
+	$scope.shopForm = jeaForm;
 
 }])
