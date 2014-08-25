@@ -12,7 +12,7 @@ angular.module("jsonEditorApp")
 	
 	$scope.addShop = function(){
 		jeaData.add($scope.shop);
-		
+		jeaData.saveToStorage();
 		$location.path("/");
 	};
 
