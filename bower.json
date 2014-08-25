@@ -1,0 +1,20 @@
+{
+  "name": "json_editor",
+  "version": "0.0.0",
+  "authors": [
+    "Pei Cheng <duffy.cheng@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-route": "~1.2.23"
+  }
+}
