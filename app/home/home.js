@@ -11,4 +11,9 @@ angular.module("jsonEditorApp")
 	$scope.shopData = jeaData.get();
 	$scope.shopForm = jeaForm;
 
+	$scope.delete = function(index){
+		jeaData.delete(index);
+		jeaData.saveToStorage();
+	};
+
 }])

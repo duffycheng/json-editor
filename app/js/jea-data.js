@@ -9,6 +9,9 @@ angular.module("jsonEditorApp")
 		add:function(data){
 			displayData.push(data);
 		},
+		delete:function(index){
+			displayData.splice(index, 1);
+		},
 		saveToStorage:function(){
 			jsonStorage.put(displayData);
 		}
