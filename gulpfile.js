@@ -9,8 +9,8 @@ var rev = require('gulp-rev');
 var clean = require('gulp-clean');
 
 gulp.task('copy-html-files', function() {
-  gulp.src(['./app/**/*.html', './app/js/data.json', '!./app/index.html'], {base: './app'})
-    .pipe(gulp.dest('build/'));
+  gulp.src(['./app/**/*.html', './app/js/data.json',, './app/css/style.css', '!./app/index.html'], {base: './app'})
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('usemin', function() {
@@ -18,7 +18,7 @@ gulp.task('usemin', function() {
     .pipe(usemin({
       js: [uglify(), rev()]
     }))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('connect', function() {
