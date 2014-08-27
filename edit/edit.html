@@ -1,0 +1,22 @@
+<h2>Edit This Shop</h2>
+<form id="shop-form" ng-submit="edit()">
+	<table class="table">
+		<thead>
+			<th>Index</th>
+			<th ng-repeat="input in shopForm">{{input.header}}</th>
+		</tr>
+	</thead>
+		<tbody class="table-striped">
+			<tr >
+				<td>{{index}}</td>
+				<td ng-repeat="input in shopForm">
+					<input class="form-control" type="{{input.type}}" name="{{input.model}}" ng-model="originalData[input.model]" value="originalData[input.model]" placeholder="{{input.placeholder}}">
+					<p ng-if="input.element == 'list'">You can enter more than one rule, separate by comma (,)</p>	
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="bottom-action">
+		<input type="submit" class="btn btn-primary" name="" value="Save and Back">
+	</div>
+</form>
