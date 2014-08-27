@@ -1,7 +1,7 @@
 json-editor
 ===========
 
-#Cap Stone Project for AngularJS course @ Thinkful
+##Cap Stone Project for AngularJS course @ Thinkful
 
 1. Read json file and save to localStorage
 2. Add, Edit, Delete function
