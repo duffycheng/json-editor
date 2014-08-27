@@ -5,10 +5,20 @@ angular.module("jsonEditorApp")
     controller : 'homeController'
   });
 }])
-.controller('homeController', ['$scope', '$http','jeaData', 'jeaForm', 'jsonStorage', function($scope, $http, jeaData, jeaForm, jsonStorage){
+.controller('homeController', ['$scope', '$http','jeaData', 'jeaForm', 'jsonStorage' , 'jsonData', function($scope, $http, jeaData, jeaForm, jsonStorage, jsonData){
 	
-	//shop data object, write to file system later
-	$scope.shopData = jeaData.get();
+	//in the begining, here called the jeaData.get() before the promise (jsonData()) resolve.....	
+	if(jeaData.get().length <= 0){
+		jsonData().then(function(data){
+		if(data && data !== ""){
+			$scope.shopData = data;
+			 jsonStorage.put(data);
+			}
+		});
+	}else{
+		$scope.shopData = jeaData.get();
+	}
+	
 	$scope.shopForm = jeaForm;
 
 	$scope.delete = function(index){

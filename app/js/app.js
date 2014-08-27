@@ -1,1 +1,1 @@
-angular.module("jsonEditorApp",['ngRoute']);
+angular.module("jsonEditorApp",['ngRoute','ngSanitize']);

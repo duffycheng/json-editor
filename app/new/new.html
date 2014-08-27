@@ -3,17 +3,23 @@
 	<table class="table">
 		<thead>
 			<th>No.</th>
-			<th>Name</th>
-			<th>Contact Number</th>
+			<th ng-repeat="input in shopForm">{{input.header}}</th>
+
 		</tr>
 	</thead>
 		<tbody class="table-striped">
 			<tr >
 				<td>add 1</td>
-				<td ng-repeat="input in shopForm"><input class="form-control" type="{{input.type}}" name="{{input.name}}" ng-model="shop[input.model]" value="" placeholder="{{input.placeholder}}"></td>
+				<td ng-repeat="input in shopForm">
+					<input class="form-control" type="{{input.type}}" name="{{input.name}}" ng-model="shop[input.model]" value=" " placeholder="{{input.placeholder}}">
+					<p ng-if="input.element == 'list'">You can enter more than one rule, separate by comma (,)</p>	
+				</td>
+				
 			</tr>
 		</tbody>
 	</table>
-
-	<input type="submit" class="btn btn-primary" name="" value="Save">
+	<div class="bottom-action">
+		<input type="submit" class="btn btn-primary" name="" value="Save">
+		<a href="#/" class="btn btn-success">Cancel</a>
+	</div>
 </form>

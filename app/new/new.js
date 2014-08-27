@@ -11,6 +11,7 @@ angular.module("jsonEditorApp")
 	$scope.shopForm=jeaForm;
 	
 	$scope.addShop = function(){
+		console.log($scope.shop);
 		jeaData.add($scope.shop);
 		jeaData.saveToStorage();
 		$location.path("/");
