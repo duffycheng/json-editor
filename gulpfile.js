@@ -10,7 +10,7 @@ var clean = require('gulp-clean');
 
 gulp.task('copy-html-files', function() {
   gulp.src(['./app/**/*.html', './app/js/data.json',, './app/css/style.css', '!./app/index.html'], {base: './app'})
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('usemin', function() {
@@ -18,7 +18,7 @@ gulp.task('usemin', function() {
     .pipe(usemin({
       js: [uglify(), rev()]
     }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('connect', function() {

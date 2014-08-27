@@ -1,4 +1,0 @@
-[submodule "build"]
-	path = build
-	url = git@github.com:duffycheng/json-editor.git
-	branch = gh-pages
