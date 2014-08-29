@@ -1,5 +1,7 @@
 /**
  * Services that persists and retrieves data from localStorage
+ * The idea of using localStorage is inspired by AngularJS todoMVC project
+ * https://github.com/tastejs/todomvc/tree/gh-pages/architecture-examples/angularjs
  */
 angular.module('jsonEditorApp')
 	.factory('jsonStorage', function () {

@@ -8,7 +8,9 @@ angular.module("jsonEditorApp")
     		return $route.current.params.index;
     	}],
     	originalData: ['$route', 'jeaData',function($route, jeaData){
-    		return jeaData.get()[$route.current.params.index];
+    		return jeaData.get().then(function(data){
+                return data[$route.current.params.index];
+            });
     	}]
     }
   });
@@ -17,7 +19,6 @@ angular.module("jsonEditorApp")
     $scope.index = index;
     $scope.originalData = originalData;
 
-	//form structure, can define in an external json file
 	$scope.shopForm=jeaForm;
 	
 	$scope.edit = function(){	   
