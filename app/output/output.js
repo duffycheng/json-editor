@@ -12,7 +12,7 @@ angular.module("jsonEditorApp")
 	$scope.sendToSever = function(){
 		var data = $scope.jsonData;
 		$http({
-		    method: 'PUT',
+		    method: 'POST',
 		    url: '/api/write',
 		    data: data,
 		    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -20,6 +20,12 @@ angular.module("jsonEditorApp")
 			console.log(status);
 			console.log(headers);
 			alert("output finished");
-		});
+		}).error(function(data, status, headers, config) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+      console.log(status);
+			console.log(headers);
+			alert("output error");
+    	});
 	};
 }])
