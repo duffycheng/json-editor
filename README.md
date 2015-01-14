@@ -6,7 +6,5 @@ json-editor
 1. Read json file and save to localStorage
 2. Add, Edit, Delete function
 3. Print out result on the output page
+4. output data to the json file in local file system.
 
-##Todo
-
-output file to the json file in local file system.
